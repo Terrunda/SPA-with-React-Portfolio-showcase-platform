@@ -1,20 +1,17 @@
 import { useState } from "react";
 import ProjectCard from "./ProjectCard";
 
-function ProjectAdder() {
+function ProjectAdder({ onAddProject }) {
+    {/* callback function to send data from ProjectAdder to parent component App */}
     const [formData, setFormData] = useState({  title: "", description: "", imageURL: "" });
 
     const handleFormChange =(event) => {
-        setFormData({...formData, [event.target.name]: event.target.value});
+        setFormData({...formData, [event.target.name]: event.target.value});  
     };
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        <ProjectCard
-        title={formData.title}
-        description={formData.description}
-        imageURL={formData.imageURL}
-        />
+        onAddProject(formData);
     };
 
     return (

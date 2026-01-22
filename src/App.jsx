@@ -1,18 +1,23 @@
 import { useState } from 'react'
 import ProjectCard from './components/ProjectCard'
 import ProjectAdder from './components/ProjectAdder'
+import ProjectList from './components/ProjectList'
 import './App.css'
 
 function App() {
+const [projects, setProjects] = useState([]);
 
-  return (
-    <>
-    <h1>Personal Project Showcase App</h1>
-    <ProjectAdder/>
+    function addProject(newProject) {
+        setProjects([...projects, newProject]);
+    };
 
-    <ProjectCard/>
-    </>
-  )
+    return (
+        <div>
+            <h1>Personal Project Showcase App</h1>
+            <ProjectAdder onAddProject={addProject} /> {/*Updating state  */}
+            <ProjectList projects={projects} />
+        </div>
+  );
 }
 
 export default App

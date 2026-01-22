@@ -3,7 +3,6 @@ import placeHolderImage from "../images/101806.jpg"
 
 function ProjectCard({ title, description, imageURL }) {
     {/* Accept parameters to modify the Project card based on title and description */}
-    const [project, setProject] = useState({});
 
     const displayImage = imageURL ? imageURL : placeHolderImage;
     return (
