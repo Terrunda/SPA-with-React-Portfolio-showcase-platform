@@ -1,12 +1,13 @@
 import { useState } from "react";
 import placeHolderImage from "../images/101806.jpg"
+import styles from "../styles/ProjectCard.module.css"
 
 function ProjectCard({ title, description, imageURL }) {
     {/* Accept parameters to modify the Project card based on title and description */}
 
     const displayImage = imageURL ? imageURL : placeHolderImage;
     return (
-        <div className="ProjectCard">
+        <div className={styles.ProjectCard}>
             <img 
                 src={displayImage} 
                 alt={title || "Project preview"} 

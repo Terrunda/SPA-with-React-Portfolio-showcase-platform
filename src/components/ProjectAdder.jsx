@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ProjectCard from "./ProjectCard";
+import styles from '../styles/ProjectAdder.module.css'
 
 function ProjectAdder({ onAddProject }) {
     {/* callback function to send data from ProjectAdder to parent component App */}
@@ -16,7 +16,7 @@ function ProjectAdder({ onAddProject }) {
 
     return (
         <>
-        <div id="ProjectAdder">
+        <div className={styles.ProjectAdder}>
             <h2>Add Project</h2>
             <form onSubmit={handleFormSubmit}>
                 <label>Title</label>

@@ -4,6 +4,9 @@ import ProjectAdder from './components/ProjectAdder'
 import ProjectList from './components/ProjectList'
 import './App.css'
 
+{/* Styles */}
+import styles from './styles/ProjectAdder.module.css'
+
 function App() {
 const [projects, setProjects] = useState([]);
 
